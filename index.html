@@ -138,6 +138,7 @@
 
     /* ── Theme Toggle ── */
     .theme-toggle {
+      border: 0px;
       position: absolute;
       top: 1rem;
       right: 1rem;
@@ -156,7 +157,6 @@
       -webkit-backdrop-filter: blur(8px);
     }
     .theme-toggle:hover {
-      background: var(--toggle-hover);
       transform: scale(1.1);
     }
     .theme-toggle:active { transform: scale(0.95); }
@@ -330,7 +330,7 @@
     @media (max-width: 640px) {
       .header { padding: 2rem 1.25rem; }
       .header h1 { font-size: 1.5rem; }
-      .body { padding: 0px 1.25rem; }
+      .body { padding: 1rem 1.25rem; }
       .entry-header, .entry-role-row { flex-direction: column; }
       .skills-grid { grid-template-columns: 1fr; }
       .resume{margin: 0px auto;}
