@@ -548,8 +548,9 @@
         <button class="toggle-group__btn" type="button" data-filter="all" aria-pressed="true">All work</button>
         <button class="toggle-group__btn" type="button" data-filter="product" aria-pressed="false">Products</button>
         <button class="toggle-group__btn" type="button" data-filter="tooling" aria-pressed="false">AI-augmented tooling</button>
+        <button class="toggle-group__btn" type="button" data-filter="open-source" aria-pressed="false">Open source</button>
       </div>
-      <p class="label" id="projectCount" aria-live="polite">9 projects</p>
+      <p class="label" id="projectCount" aria-live="polite">13 projects</p>
     </div>
 
     <div class="project-grid" id="projectGrid">
@@ -638,7 +639,82 @@
         </button>
       </article>
 
-      <article class="project" data-track="tooling" data-span="third" data-reveal>
+      <article class="project" data-track="open-source" data-span="wide" data-reveal>
+        <button class="project__card" type="button" data-case="case-stock" aria-haspopup="dialog">
+          <span class="project__top">
+            <span>
+              <span class="label project__kind">Open source · Indian equities</span>
+              <span class="project__name">BSK Stock Analyser</span>
+              <span class="project__role">Design, build and accessibility audit <span class="project__badge">Live</span></span>
+              <span class="project__blurb">A research tool for NSE and BSE equities: live price history and fundamentals, deterministic technical, trend, risk and valuation metrics, and a transparent weighted score that states its own confidence and data quality rather than hiding them.</span>
+            </span>
+          </span>
+          <span class="project__bottom">
+            <span class="project__peek"><span><span class="project__peek-inner">
+              <span class="project__peek-row"><span class="peek-k">Accessibility</span><span class="peek-v">0 axe-core violations across landing and dashboard, in both themes</span></span>
+              <span class="project__peek-row"><span class="peek-k">Architecture</span><span class="peek-v">Static frontend with serverless functions proxying data server-side</span></span>
+            </span></span></span>
+            <span class="chip-row">
+              <span class="chip">JavaScript</span><span class="chip">CSS</span><span class="chip">Vercel</span>
+              <span class="chip">Serverless</span><span class="chip">Playwright</span><span class="chip">axe-core</span>
+            </span>
+            <span class="project__open">Open case study <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </span>
+        </button>
+      </article>
+
+      <article class="project" data-track="open-source" data-span="half" data-reveal>
+        <button class="project__card" type="button" data-case="case-news" aria-haspopup="dialog">
+          <span class="project__top">
+            <span>
+              <span class="label project__kind">Open source · News</span>
+              <span class="project__name">Indian News App</span>
+              <span class="project__role">React + Vite <span class="project__badge">Live</span></span>
+              <span class="project__blurb">A multilingual news aggregator covering 13 Indian languages, built entirely on free RSS feeds with no paid API dependency.</span>
+            </span>
+          </span>
+          <span class="project__bottom">
+            <span class="chip-row"><span class="chip">React</span><span class="chip">Vite</span><span class="chip">JavaScript</span><span class="chip">RSS</span></span>
+            <span class="project__open">Open case study <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </span>
+        </button>
+      </article>
+
+      <article class="project" data-track="open-source" data-span="half" data-reveal>
+        <button class="project__card" type="button" data-case="case-ytaudio" aria-haspopup="dialog">
+          <span class="project__top">
+            <span>
+              <span class="label project__kind">Open source · Chrome extension</span>
+              <span class="project__name">YouTube Audio Only</span>
+              <span class="project__role">Published extension <span class="project__badge">Chrome Web Store</span></span>
+              <span class="project__blurb">Hides YouTube&rsquo;s video player and thumbnails so a tab plays as audio only — less bandwidth, longer battery, fewer distractions. Pure JavaScript, zero dependencies.</span>
+            </span>
+          </span>
+          <span class="project__bottom">
+            <span class="chip-row"><span class="chip">Chrome Extension</span><span class="chip">JavaScript</span><span class="chip">HTML</span></span>
+            <span class="project__open">Open case study <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </span>
+        </button>
+      </article>
+
+      <article class="project" data-track="open-source" data-span="half" data-reveal>
+        <button class="project__card" type="button" data-case="case-smartcopy" aria-haspopup="dialog">
+          <span class="project__top">
+            <span>
+              <span class="label project__kind">Open source · Chrome extension</span>
+              <span class="project__name">SmartCopy</span>
+              <span class="project__role">Developer utility</span>
+              <span class="project__blurb">Detects what kind of text you just copied and offers the matching developer action — prettify JSON, convert a colour, decode Base64, format code.</span>
+            </span>
+          </span>
+          <span class="project__bottom">
+            <span class="chip-row"><span class="chip">Chrome Extension</span><span class="chip">JavaScript</span></span>
+            <span class="project__open">Open case study <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </span>
+        </button>
+      </article>
+
+      <article class="project" data-track="tooling" data-span="half" data-reveal>
         <button class="project__card" type="button" data-case="case-chatbot" aria-haspopup="dialog">
           <span class="project__top">
             <span>
@@ -655,7 +731,7 @@
         </button>
       </article>
 
-      <article class="project" data-track="tooling" data-span="third" data-reveal>
+      <article class="project" data-track="tooling" data-span="half" data-reveal>
         <button class="project__card" type="button" data-case="case-framework" aria-haspopup="dialog">
           <span class="project__top">
             <span>
@@ -672,7 +748,7 @@
         </button>
       </article>
 
-      <article class="project" data-track="tooling" data-span="third" data-reveal>
+      <article class="project" data-track="tooling" data-span="half" data-reveal>
         <button class="project__card" type="button" data-case="case-regression" aria-haspopup="dialog">
           <span class="project__top">
             <span>
@@ -694,9 +770,9 @@
           <span class="project__top">
             <span>
               <span class="label project__kind">AI-augmented · Tokens</span>
-              <span class="project__name">Colour unification tool</span>
-              <span class="project__role">Python utility</span>
-              <span class="project__blurb">Standardises design-system colour token usage across a large codebase.</span>
+              <span class="project__name">Color Extracter</span>
+              <span class="project__role">Node.js &amp; Python toolset</span>
+              <span class="project__blurb">Extracts HEX, RGB, HSL and named colours from a codebase, resolving LESS/SCSS/CSS variables, so token usage can be unified across it.</span>
             </span>
           </span>
           <span class="project__bottom">
@@ -706,14 +782,14 @@
         </button>
       </article>
 
-      <article class="project" data-track="tooling" data-span="half" data-reveal>
+      <article class="project" data-track="tooling open-source" data-span="half" data-reveal>
         <button class="project__card" type="button" data-case="case-vscode" aria-haspopup="dialog">
           <span class="project__top">
             <span>
               <span class="label project__kind">AI-augmented · Editor</span>
               <span class="project__name">Duplicate CSS merger</span>
-              <span class="project__role">Published VS Code extension</span>
-              <span class="project__blurb">Detects and merges duplicate CSS selectors so large stylesheets stay maintainable.</span>
+              <span class="project__role">VS Code extension <span class="project__badge">Marketplace</span></span>
+              <span class="project__blurb">Finds CSS rules with identical property sets — regardless of selector name or declaration order — and merges them safely behind a diff preview.</span>
             </span>
           </span>
           <span class="project__bottom">
@@ -938,6 +1014,187 @@
     </div>
   </article>
 
+  <article class="case" id="case-stock">
+    <header class="case__head">
+      <p class="label">Open source · Indian equities</p>
+      <h2 class="case__title">BSK Stock Analyser</h2>
+      <p class="case__sub"><span>Design, build and accessibility audit</span><span>Public repository</span></p>
+    </header>
+    <div class="case__body">
+      <div class="case__blocks">
+        <section class="case__block">
+          <h3>Overview</h3>
+          <p>A decision-support tool for Indian equities on the NSE and BSE. It pulls live price history and fundamentals, computes technical, trend, risk and valuation metrics deterministically, and produces a weighted score with an explicit decision, a confidence level and a data-quality reading.</p>
+        </section>
+        <section class="case__block">
+          <h3>Problem</h3>
+          <p>Two problems, really. Fetching market data straight from the browser runs into CORS and leaves fundamentals out of reach entirely. And tools in this space tend to present a number without showing how confident it is or how good the underlying data was.</p>
+        </section>
+        <section class="case__block">
+          <h3>Approach</h3>
+          <ul>
+            <li>Static frontend plus serverless functions that proxy the data source server-side — which removes the CORS problem and unlocks fundamentals such as P/E, P/B, ROE, margins, debt and cash flow.</li>
+            <li>Scoring is deterministic and weighted, and the app surfaces its own confidence and data quality alongside every result.</li>
+            <li>A markets dashboard computed from the tracked universe: gainers and losers, most active by value and volume, volume shockers, near 52-week highs and lows, sector trends and a market-breadth bar.</li>
+            <li>Graceful degradation: on plain static hosting without the functions, price data falls back to public relays and fundamentals report as unavailable rather than being invented.</li>
+          </ul>
+        </section>
+        <section class="case__block">
+          <h3>Interface</h3>
+          <ul>
+            <li>A bespoke design system — custom logo, hand-built SVG icon set, Sora / Inter / JetBrains Mono, an emerald-on-carbon palette with a gold signal accent.</li>
+            <li>Light and dark themes, and a circular score gauge as the primary read.</li>
+            <li>Keyboard and screen-reader support throughout: ARIA tabs and combobox, a skip link and reduced-motion support.</li>
+          </ul>
+        </section>
+        <section class="case__block">
+          <h3>Result</h3>
+          <ul>
+            <li>An automated Playwright and axe-core audit reports <b>0 accessibility violations</b> across the landing page and dashboard, in both themes.</li>
+            <li>Verified responsive at 375, 768 and 1280&nbsp;px.</li>
+          </ul>
+        </section>
+      </div>
+      <aside class="case__aside">
+        <div class="case__panel">
+          <h3>Links</h3>
+          <div class="case__links">
+            <a class="btn btn--subtle" href="https://bsk-stock-analyzer.vercel.app/" target="_blank" rel="noopener">Live site <svg class="btn__icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="btn btn--subtle" href="https://github.com/balakrishnanbsk/bsk-stock-analyzer" target="_blank" rel="noopener">GitHub <svg class="btn__icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+          </div>
+        </div>
+        <div class="case__panel">
+          <h3>Technology</h3>
+          <div class="chip-row">
+            <span class="chip">JavaScript</span><span class="chip">CSS</span><span class="chip">HTML</span>
+            <span class="chip">Vercel</span><span class="chip">Serverless functions</span><span class="chip">Playwright</span><span class="chip">axe-core</span>
+          </div>
+        </div>
+        <p class="case__note">Not investment advice. Every output is a quantitative signal derived from publicly available, delayed data — not a prediction of future returns.</p>
+      </aside>
+    </div>
+  </article>
+
+  <article class="case" id="case-news">
+    <header class="case__head">
+      <p class="label">Open source · News</p>
+      <h2 class="case__title">Indian News App</h2>
+      <p class="case__sub"><span>React + Vite</span><span>Public repository</span></p>
+    </header>
+    <div class="case__body">
+      <div class="case__blocks">
+        <section class="case__block">
+          <h3>Overview</h3>
+          <p>A lightweight multilingual news aggregator for India, built with React and Vite and powered by free RSS feeds from Google News and major Indian publications.</p>
+        </section>
+        <section class="case__block">
+          <h3>Approach</h3>
+          <ul>
+            <li>Built entirely on free RSS feeds, with <b>zero paid API dependencies</b>.</li>
+            <li>13 languages, dark mode and seven theme colours.</li>
+            <li>Live weather and AQI, a breaking-news ticker, infinite scroll and smart image extraction.</li>
+          </ul>
+        </section>
+        <section class="case__block">
+          <h3>Result</h3>
+          <p>Deployed and running on Vercel.</p>
+        </section>
+      </div>
+      <aside class="case__aside">
+        <div class="case__panel">
+          <h3>Links</h3>
+          <div class="case__links">
+            <a class="btn btn--subtle" href="https://newsapp-sepia-eta.vercel.app/" target="_blank" rel="noopener">Live site <svg class="btn__icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="btn btn--subtle" href="https://github.com/balakrishnanbsk/newsapp" target="_blank" rel="noopener">GitHub <svg class="btn__icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+          </div>
+        </div>
+        <div class="case__panel">
+          <h3>Technology</h3>
+          <div class="chip-row"><span class="chip">React</span><span class="chip">Vite</span><span class="chip">JavaScript</span><span class="chip">RSS</span><span class="chip">Vercel</span></div>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <article class="case" id="case-ytaudio">
+    <header class="case__head">
+      <p class="label">Open source · Chrome extension</p>
+      <h2 class="case__title">YouTube Audio Only</h2>
+      <p class="case__sub"><span>Published on the Chrome Web Store</span><span>Public repository</span></p>
+    </header>
+    <div class="case__body">
+      <div class="case__blocks">
+        <section class="case__block">
+          <h3>Overview</h3>
+          <p>A Chrome extension that hides YouTube&rsquo;s video player and thumbnails, turning a tab into an audio-only player.</p>
+        </section>
+        <section class="case__block">
+          <h3>Problem</h3>
+          <p>Plenty of YouTube is listening, not watching — but the video keeps decoding regardless, spending bandwidth and battery, and the thumbnail grid keeps pulling attention.</p>
+        </section>
+        <section class="case__block">
+          <h3>Approach</h3>
+          <ul>
+            <li>Hides the video player and thumbnails so playback continues as audio.</li>
+            <li>Written in pure JavaScript with <b>zero dependencies</b>.</li>
+          </ul>
+        </section>
+        <section class="case__block">
+          <h3>Result</h3>
+          <p>Published and installable from the Chrome Web Store.</p>
+        </section>
+      </div>
+      <aside class="case__aside">
+        <div class="case__panel">
+          <h3>Links</h3>
+          <div class="case__links">
+            <a class="btn btn--subtle" href="https://chromewebstore.google.com/detail/youtube-audio-only-mode-a/bpogeanooemmfcidcpbjigmbklkldhck" target="_blank" rel="noopener">Chrome Web Store <svg class="btn__icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="btn btn--subtle" href="https://github.com/balakrishnanbsk/youtubeaudioonly-privacy" target="_blank" rel="noopener">GitHub <svg class="btn__icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+          </div>
+        </div>
+        <div class="case__panel">
+          <h3>Technology</h3>
+          <div class="chip-row"><span class="chip">Chrome Extension</span><span class="chip">JavaScript</span><span class="chip">HTML</span></div>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <article class="case" id="case-smartcopy">
+    <header class="case__head">
+      <p class="label">Open source · Chrome extension</p>
+      <h2 class="case__title">SmartCopy</h2>
+      <p class="case__sub"><span>Developer utility</span><span>Public repository</span></p>
+    </header>
+    <div class="case__body">
+      <div class="case__blocks">
+        <section class="case__block">
+          <h3>Overview</h3>
+          <p>A Chrome extension that looks at what you just copied, works out what kind of text it is, and offers the developer action that fits it.</p>
+        </section>
+        <section class="case__block">
+          <h3>Approach</h3>
+          <ul>
+            <li>Detects the type of the copied text rather than making you pick a tool first.</li>
+            <li>One-click actions: prettify JSON, convert colours, decode Base64, format code, and more.</li>
+          </ul>
+        </section>
+      </div>
+      <aside class="case__aside">
+        <div class="case__panel">
+          <h3>Links</h3>
+          <div class="case__links">
+            <a class="btn btn--subtle" href="https://github.com/balakrishnanbsk/smartcopy" target="_blank" rel="noopener">GitHub <svg class="btn__icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+          </div>
+        </div>
+        <div class="case__panel">
+          <h3>Technology</h3>
+          <div class="chip-row"><span class="chip">Chrome Extension</span><span class="chip">JavaScript</span></div>
+        </div>
+      </aside>
+    </div>
+  </article>
+
   <article class="case" id="case-chatbot">
     <header class="case__head">
       <p class="label">AI-augmented development</p>
@@ -1019,8 +1276,8 @@
   <article class="case" id="case-colours">
     <header class="case__head">
       <p class="label">AI-augmented development</p>
-      <h2 class="case__title">Design system colour unification</h2>
-      <p class="case__sub"><span>Python tool</span></p>
+      <h2 class="case__title">Color Extracter</h2>
+      <p class="case__sub"><span>Node.js &amp; Python toolset</span><span>Private repository</span></p>
     </header>
     <div class="case__body">
       <div class="case__blocks">
@@ -1030,11 +1287,16 @@
         </section>
         <section class="case__block">
           <h3>Approach</h3>
-          <p>Wrote a Python tool that unifies design system colours and standardises token usage across the codebase.</p>
+          <ul>
+            <li>A dual Node.js and Python toolset that extracts HEX, RGB, HSL and named colours from a codebase.</li>
+            <li>Resolves LESS, SCSS and CSS variables rather than reading literal values only, and categorises what it finds.</li>
+            <li>Batch processing, so a large codebase can be swept in one pass.</li>
+          </ul>
         </section>
       </div>
       <aside class="case__aside">
-        <div class="case__panel"><h3>Technology</h3><div class="chip-row"><span class="chip">Python</span><span class="chip">Design tokens</span></div></div>
+        <div class="case__panel"><h3>Technology</h3><div class="chip-row"><span class="chip">Python</span><span class="chip">Node</span><span class="chip">LESS</span><span class="chip">SASS</span><span class="chip">CSS</span></div></div>
+        <p class="case__note">This repository is private, so there is no public link.</p>
       </aside>
     </div>
   </article>
@@ -1053,7 +1315,10 @@
         </section>
         <section class="case__block">
           <h3>Approach</h3>
-          <p>Built and published a VS Code extension that detects duplicate CSS selectors and merges them.</p>
+          <ul>
+            <li>Finds rules with identical property sets, regardless of selector name or the order declarations appear in.</li>
+            <li>Merges them behind a <b>diff preview</b>, so the change is reviewed before it is applied.</li>
+          </ul>
         </section>
         <section class="case__block">
           <h3>Result</h3>
@@ -1061,7 +1326,14 @@
         </section>
       </div>
       <aside class="case__aside">
-        <div class="case__panel"><h3>Technology</h3><div class="chip-row"><span class="chip">VS Code</span><span class="chip">CSS</span></div></div>
+        <div class="case__panel">
+          <h3>Links</h3>
+          <div class="case__links">
+            <a class="btn btn--subtle" href="https://marketplace.visualstudio.com/items?itemName=balakrishnanbsk.css-duplicate-detector" target="_blank" rel="noopener">VS Code Marketplace <svg class="btn__icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+            <a class="btn btn--subtle" href="https://github.com/balakrishnanbsk/cssduplicatedetectorandmerger" target="_blank" rel="noopener">GitHub <svg class="btn__icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+          </div>
+        </div>
+        <div class="case__panel"><h3>Technology</h3><div class="chip-row"><span class="chip">VS Code</span><span class="chip">JavaScript</span><span class="chip">CSS</span></div></div>
       </aside>
     </div>
   </article>
@@ -1099,15 +1371,18 @@
         </div>
 
         <div class="skills__cloud" id="skillCloud">
-          <button class="tech" type="button" aria-pressed="false" data-cat="frontend" data-layer="language" data-note="expert" data-projects="case-sdp" data-roles="Zoho Corporation" data-related="CSS|JavaScript|Handlebars|JSP"><span class="tech__dot" aria-hidden="true"></span>HTML5<span class="tech__note">expert</span></button>
-          <button class="tech" type="button" aria-pressed="false" data-cat="frontend" data-layer="styling" data-note="expert" data-projects="case-sdp|case-framework|case-colours|case-vscode" data-roles="Zoho Corporation|Meye Management" data-related="LESS|SASS|Tailwind|Bootstrap"><span class="tech__dot" aria-hidden="true"></span>CSS<span class="tech__note">expert</span></button>
-          <button class="tech" type="button" aria-pressed="false" data-cat="frontend" data-layer="language" data-note="expert" data-projects="case-sdp|case-chatbot|case-regression" data-roles="Zoho Corporation|Meye Management" data-related="TypeScript|jQuery|Handlebars|Node"><span class="tech__dot" aria-hidden="true"></span>JavaScript<span class="tech__note">expert</span></button>
+          <button class="tech" type="button" aria-pressed="false" data-cat="frontend" data-layer="language" data-note="expert" data-projects="case-sdp|case-stock|case-ytaudio" data-roles="Zoho Corporation" data-related="CSS|JavaScript|Handlebars|JSP"><span class="tech__dot" aria-hidden="true"></span>HTML5<span class="tech__note">expert</span></button>
+          <button class="tech" type="button" aria-pressed="false" data-cat="frontend" data-layer="styling" data-note="expert" data-projects="case-sdp|case-stock|case-framework|case-colours|case-vscode" data-roles="Zoho Corporation|Meye Management" data-related="LESS|SASS|Tailwind|Bootstrap"><span class="tech__dot" aria-hidden="true"></span>CSS<span class="tech__note">expert</span></button>
+          <button class="tech" type="button" aria-pressed="false" data-cat="frontend" data-layer="language" data-note="expert" data-projects="case-sdp|case-stock|case-news|case-ytaudio|case-smartcopy|case-chatbot|case-regression" data-roles="Zoho Corporation|Meye Management" data-related="TypeScript|React|jQuery|Node"><span class="tech__dot" aria-hidden="true"></span>JavaScript<span class="tech__note">expert</span></button>
           <button class="tech" type="button" aria-pressed="false" data-cat="frontend" data-layer="language" data-note="expert" data-projects="" data-roles="Zoho Corporation" data-related="JavaScript|Angular"><span class="tech__dot" aria-hidden="true"></span>TypeScript<span class="tech__note">expert</span></button>
 
           <button class="tech" type="button" aria-pressed="false" data-cat="frameworks" data-layer="framework" data-projects="" data-roles="Meye Management" data-related="TypeScript|Ionic 3"><span class="tech__dot" aria-hidden="true"></span>Angular</button>
           <button class="tech" type="button" aria-pressed="false" data-cat="frameworks" data-layer="framework" data-projects="" data-roles="" data-related="JavaScript|Handlebars"><span class="tech__dot" aria-hidden="true"></span>Ember</button>
           <button class="tech" type="button" aria-pressed="false" data-cat="frameworks" data-layer="framework" data-projects="" data-roles="" data-related="JavaScript|HTML5"><span class="tech__dot" aria-hidden="true"></span>jQuery</button>
           <button class="tech" type="button" aria-pressed="false" data-cat="frameworks" data-layer="styling" data-projects="case-framework" data-roles="" data-related="CSS|SASS"><span class="tech__dot" aria-hidden="true"></span>Bootstrap</button>
+          <button class="tech" type="button" aria-pressed="false" data-cat="frameworks" data-layer="framework" data-projects="case-news" data-roles="" data-related="JavaScript|Vite|TypeScript"><span class="tech__dot" aria-hidden="true"></span>React</button>
+          <button class="tech" type="button" aria-pressed="false" data-cat="tools" data-layer="tooling" data-projects="case-news" data-roles="" data-related="React|Node|JavaScript"><span class="tech__dot" aria-hidden="true"></span>Vite</button>
+          <button class="tech" type="button" aria-pressed="false" data-cat="tools" data-layer="platform" data-projects="case-ytaudio|case-smartcopy|case-regression" data-roles="" data-related="JavaScript|HTML5"><span class="tech__dot" aria-hidden="true"></span>Chrome Extension</button>
 
           <button class="tech" type="button" aria-pressed="false" data-cat="styling" data-layer="styling" data-projects="case-sdp" data-roles="Zoho Corporation" data-related="CSS|Grunt|Node"><span class="tech__dot" aria-hidden="true"></span>LESS</button>
           <button class="tech" type="button" aria-pressed="false" data-cat="styling" data-layer="styling" data-projects="" data-roles="" data-related="CSS|LESS"><span class="tech__dot" aria-hidden="true"></span>SASS</button>
@@ -1125,7 +1400,7 @@
           <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="tooling" data-projects="case-sdp" data-roles="Zoho Corporation" data-related="Grunt|Python"><span class="tech__dot" aria-hidden="true"></span>Shell Script</button>
 
           <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="platform" data-projects="case-sdp" data-roles="Zoho Corporation" data-related="Handlebars|HTML5"><span class="tech__dot" aria-hidden="true"></span>JSP</button>
-          <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="tooling" data-projects="case-sdp" data-roles="Zoho Corporation" data-related="Grunt|LESS|JavaScript"><span class="tech__dot" aria-hidden="true"></span>Node</button>
+          <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="tooling" data-projects="case-sdp|case-colours" data-roles="Zoho Corporation" data-related="Grunt|LESS|JavaScript"><span class="tech__dot" aria-hidden="true"></span>Node</button>
           <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="framework" data-projects="case-family" data-roles="Meye Management" data-related="Angular|PDF generation"><span class="tech__dot" aria-hidden="true"></span>Ionic 3</button>
           <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="language" data-projects="" data-roles="Suriya Informatics Solutions" data-related="Spring MVC|REST APIs"><span class="tech__dot" aria-hidden="true"></span>Java</button>
           <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="framework" data-projects="" data-roles="Suriya Informatics Solutions" data-related="Java|REST APIs"><span class="tech__dot" aria-hidden="true"></span>Spring MVC</button>
@@ -1148,15 +1423,15 @@
             </div>
             <div class="stack__layer" data-layer="framework">
               <span class="stack__name">Framework</span>
-              <div class="chip-row"><span class="chip">Angular</span><span class="chip">Ember</span><span class="chip">jQuery</span><span class="chip">Ionic 3</span><span class="chip">Laravel</span><span class="chip">Spring MVC</span><span class="chip">Handlebars</span><span class="chip">DevExpress</span></div>
+              <div class="chip-row"><span class="chip">Angular</span><span class="chip">React</span><span class="chip">Ember</span><span class="chip">jQuery</span><span class="chip">Ionic 3</span><span class="chip">Laravel</span><span class="chip">Spring MVC</span><span class="chip">Handlebars</span><span class="chip">DevExpress</span></div>
             </div>
             <div class="stack__layer" data-layer="tooling">
               <span class="stack__name">Tooling</span>
-              <div class="chip-row"><span class="chip">Grunt</span><span class="chip">Node</span><span class="chip">Shell Script</span><span class="chip">MCP</span></div>
+              <div class="chip-row"><span class="chip">Grunt</span><span class="chip">Vite</span><span class="chip">Node</span><span class="chip">Shell Script</span><span class="chip">MCP</span></div>
             </div>
             <div class="stack__layer" data-layer="platform">
               <span class="stack__name">Delivery</span>
-              <div class="chip-row"><span class="chip">JSP</span><span class="chip">REST APIs</span><span class="chip">SQL</span><span class="chip">Razorpay</span></div>
+              <div class="chip-row"><span class="chip">JSP</span><span class="chip">REST APIs</span><span class="chip">SQL</span><span class="chip">Razorpay</span><span class="chip">Chrome Extension</span></div>
             </div>
           </div>
         </div>

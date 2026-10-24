@@ -24,7 +24,9 @@ export function initProjects() {
     );
     let shown = 0;
     cards.forEach((card) => {
-      const on = filter === 'all' || card.dataset.track === filter;
+      // A project can sit in more than one track, e.g. tooling that is also open source
+      const tracks = (card.dataset.track || '').split(' ').filter(Boolean);
+      const on = filter === 'all' || tracks.includes(filter);
       card.hidden = !on;
       card.classList.remove('is-peeking');
       if (on) shown++;

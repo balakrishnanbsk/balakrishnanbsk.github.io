@@ -690,6 +690,22 @@ details.awards > summary:hover { color: var(--ink); }
 .project[data-span="half"] .project__name { font-size: var(--step-1); }
 
 .project__role { color: var(--accent); font-size: var(--step--1); font-weight: 500; margin-block-start: 2px; }
+
+/* "Live", "Marketplace" — a shipped thing says so on the card */
+.project__badge {
+  display: inline-block;
+  margin-inline-start: 0.5em;
+  padding: 0.12em 0.6em;
+  border: var(--rule) solid color-mix(in oklab, var(--accent) 38%, var(--line));
+  border-radius: var(--radius-full);
+  background: var(--accent-wash);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  font-weight: 400;
+  vertical-align: 1px;
+  white-space: nowrap;
+}
 .project__blurb { color: var(--ink-3); font-size: var(--step--1); line-height: 1.55; max-width: 56ch; margin-block-start: var(--space-xs); }
 
 .project__bottom { display: grid; gap: var(--space-s); }
@@ -765,6 +781,11 @@ details.awards > summary:hover { color: var(--ink); }
 .case__facts div { display: grid; grid-template-columns: 5.5rem 1fr; gap: var(--space-s); font-size: var(--step--1); }
 .case__facts dt { color: var(--ink-4); }
 .case__facts dd { margin: 0; color: var(--ink-2); }
+
+.case__links { display: flex; flex-wrap: wrap; gap: var(--space-2xs); }
+.case__links .btn { flex: 1 1 auto; justify-content: space-between; }
+.case__links .btn__icon { opacity: 0.55; }
+.case__links .btn:hover .btn__icon { opacity: 1; }
 
 .case__note {
   font-size: var(--step--2);
