@@ -550,7 +550,7 @@
         <button class="toggle-group__btn" type="button" data-filter="tooling" aria-pressed="false">AI-augmented tooling</button>
         <button class="toggle-group__btn" type="button" data-filter="open-source" aria-pressed="false">Open source</button>
       </div>
-      <p class="label" id="projectCount" aria-live="polite">13 projects</p>
+      <p class="label" id="projectCount" aria-live="polite">12 projects</p>
     </div>
 
     <div class="project-grid" id="projectGrid">
@@ -714,7 +714,24 @@
         </button>
       </article>
 
-      <article class="project" data-track="tooling" data-span="half" data-reveal>
+      <article class="project" data-track="tooling open-source" data-span="half" data-reveal>
+        <button class="project__card" type="button" data-case="case-vscode" aria-haspopup="dialog">
+          <span class="project__top">
+            <span>
+              <span class="label project__kind">AI-augmented · Editor</span>
+              <span class="project__name">Duplicate CSS merger</span>
+              <span class="project__role">VS Code extension <span class="project__badge">Marketplace</span></span>
+              <span class="project__blurb">Finds CSS rules with identical property sets — regardless of selector name or declaration order — and merges them safely behind a diff preview.</span>
+            </span>
+          </span>
+          <span class="project__bottom">
+            <span class="chip-row"><span class="chip">VS Code</span><span class="chip">CSS</span></span>
+            <span class="project__open">Details <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+          </span>
+        </button>
+      </article>
+
+      <article class="project" data-track="tooling" data-span="third" data-reveal>
         <button class="project__card" type="button" data-case="case-chatbot" aria-haspopup="dialog">
           <span class="project__top">
             <span>
@@ -731,7 +748,7 @@
         </button>
       </article>
 
-      <article class="project" data-track="tooling" data-span="half" data-reveal>
+      <article class="project" data-track="tooling" data-span="third" data-reveal>
         <button class="project__card" type="button" data-case="case-framework" aria-haspopup="dialog">
           <span class="project__top">
             <span>
@@ -748,7 +765,7 @@
         </button>
       </article>
 
-      <article class="project" data-track="tooling" data-span="half" data-reveal>
+      <article class="project" data-track="tooling" data-span="third" data-reveal>
         <button class="project__card" type="button" data-case="case-regression" aria-haspopup="dialog">
           <span class="project__top">
             <span>
@@ -760,40 +777,6 @@
           </span>
           <span class="project__bottom">
             <span class="chip-row"><span class="chip">Chrome extension</span><span class="chip">JavaScript</span></span>
-            <span class="project__open">Details <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          </span>
-        </button>
-      </article>
-
-      <article class="project" data-track="tooling" data-span="half" data-reveal>
-        <button class="project__card" type="button" data-case="case-colours" aria-haspopup="dialog">
-          <span class="project__top">
-            <span>
-              <span class="label project__kind">AI-augmented · Tokens</span>
-              <span class="project__name">Color Extracter</span>
-              <span class="project__role">Node.js &amp; Python toolset</span>
-              <span class="project__blurb">Extracts HEX, RGB, HSL and named colours from a codebase, resolving LESS/SCSS/CSS variables, so token usage can be unified across it.</span>
-            </span>
-          </span>
-          <span class="project__bottom">
-            <span class="chip-row"><span class="chip">Python</span><span class="chip">Design tokens</span></span>
-            <span class="project__open">Details <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-          </span>
-        </button>
-      </article>
-
-      <article class="project" data-track="tooling open-source" data-span="half" data-reveal>
-        <button class="project__card" type="button" data-case="case-vscode" aria-haspopup="dialog">
-          <span class="project__top">
-            <span>
-              <span class="label project__kind">AI-augmented · Editor</span>
-              <span class="project__name">Duplicate CSS merger</span>
-              <span class="project__role">VS Code extension <span class="project__badge">Marketplace</span></span>
-              <span class="project__blurb">Finds CSS rules with identical property sets — regardless of selector name or declaration order — and merges them safely behind a diff preview.</span>
-            </span>
-          </span>
-          <span class="project__bottom">
-            <span class="chip-row"><span class="chip">VS Code</span><span class="chip">CSS</span></span>
             <span class="project__open">Details <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></span>
           </span>
         </button>
@@ -1273,33 +1256,6 @@
     </div>
   </article>
 
-  <article class="case" id="case-colours">
-    <header class="case__head">
-      <p class="label">AI-augmented development</p>
-      <h2 class="case__title">Color Extracter</h2>
-      <p class="case__sub"><span>Node.js &amp; Python toolset</span></p>
-    </header>
-    <div class="case__body">
-      <div class="case__blocks">
-        <section class="case__block">
-          <h3>Problem</h3>
-          <p>Colour values had drifted across a large codebase, so the same intent was expressed by many different literal values.</p>
-        </section>
-        <section class="case__block">
-          <h3>Approach</h3>
-          <ul>
-            <li>A dual Node.js and Python toolset that extracts HEX, RGB, HSL and named colours from a codebase.</li>
-            <li>Resolves LESS, SCSS and CSS variables rather than reading literal values only, and categorises what it finds.</li>
-            <li>Batch processing, so a large codebase can be swept in one pass.</li>
-          </ul>
-        </section>
-      </div>
-      <aside class="case__aside">
-        <div class="case__panel"><h3>Technology</h3><div class="chip-row"><span class="chip">Python</span><span class="chip">Node</span><span class="chip">LESS</span><span class="chip">SASS</span><span class="chip">CSS</span></div></div>
-      </aside>
-    </div>
-  </article>
-
   <article class="case" id="case-vscode">
     <header class="case__head">
       <p class="label">AI-augmented development</p>
@@ -1371,7 +1327,7 @@
 
         <div class="skills__cloud" id="skillCloud">
           <button class="tech" type="button" aria-pressed="false" data-cat="frontend" data-layer="language" data-note="expert" data-projects="case-sdp|case-stock|case-ytaudio" data-roles="Zoho Corporation" data-related="CSS|JavaScript|Handlebars|JSP"><span class="tech__dot" aria-hidden="true"></span>HTML5<span class="tech__note">expert</span></button>
-          <button class="tech" type="button" aria-pressed="false" data-cat="frontend" data-layer="styling" data-note="expert" data-projects="case-sdp|case-stock|case-framework|case-colours|case-vscode" data-roles="Zoho Corporation|Meye Management" data-related="LESS|SASS|Tailwind|Bootstrap"><span class="tech__dot" aria-hidden="true"></span>CSS<span class="tech__note">expert</span></button>
+          <button class="tech" type="button" aria-pressed="false" data-cat="frontend" data-layer="styling" data-note="expert" data-projects="case-sdp|case-stock|case-framework|case-vscode" data-roles="Zoho Corporation|Meye Management" data-related="LESS|SASS|Tailwind|Bootstrap"><span class="tech__dot" aria-hidden="true"></span>CSS<span class="tech__note">expert</span></button>
           <button class="tech" type="button" aria-pressed="false" data-cat="frontend" data-layer="language" data-note="expert" data-projects="case-sdp|case-stock|case-news|case-ytaudio|case-smartcopy|case-chatbot|case-regression" data-roles="Zoho Corporation|Meye Management" data-related="TypeScript|React|jQuery|Node"><span class="tech__dot" aria-hidden="true"></span>JavaScript<span class="tech__note">expert</span></button>
           <button class="tech" type="button" aria-pressed="false" data-cat="frontend" data-layer="language" data-note="expert" data-projects="" data-roles="Zoho Corporation" data-related="JavaScript|Angular"><span class="tech__dot" aria-hidden="true"></span>TypeScript<span class="tech__note">expert</span></button>
 
@@ -1395,11 +1351,11 @@
           <button class="tech" type="button" aria-pressed="false" data-cat="backend" data-layer="language" data-projects="case-age|case-yuno|case-family" data-roles="Meye Management" data-related="Laravel|SQL|Razorpay"><span class="tech__dot" aria-hidden="true"></span>PHP</button>
 
           <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="platform" data-projects="case-age|case-yuno" data-roles="Meye Management|Suriya Informatics Solutions" data-related="Laravel|Spring MVC|SQL"><span class="tech__dot" aria-hidden="true"></span>REST APIs</button>
-          <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="language" data-projects="case-sdp|case-colours" data-roles="Zoho Corporation" data-related="Shell Script|CSS"><span class="tech__dot" aria-hidden="true"></span>Python</button>
+          <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="language" data-projects="case-sdp" data-roles="Zoho Corporation" data-related="Shell Script|CSS"><span class="tech__dot" aria-hidden="true"></span>Python</button>
           <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="tooling" data-projects="case-sdp" data-roles="Zoho Corporation" data-related="Grunt|Python"><span class="tech__dot" aria-hidden="true"></span>Shell Script</button>
 
           <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="platform" data-projects="case-sdp" data-roles="Zoho Corporation" data-related="Handlebars|HTML5"><span class="tech__dot" aria-hidden="true"></span>JSP</button>
-          <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="tooling" data-projects="case-sdp|case-colours" data-roles="Zoho Corporation" data-related="Grunt|LESS|JavaScript"><span class="tech__dot" aria-hidden="true"></span>Node</button>
+          <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="tooling" data-projects="case-sdp" data-roles="Zoho Corporation" data-related="Grunt|LESS|JavaScript"><span class="tech__dot" aria-hidden="true"></span>Node</button>
           <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="framework" data-projects="case-family" data-roles="Meye Management" data-related="Angular|PDF generation"><span class="tech__dot" aria-hidden="true"></span>Ionic 3</button>
           <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="language" data-projects="" data-roles="Suriya Informatics Solutions" data-related="Spring MVC|REST APIs"><span class="tech__dot" aria-hidden="true"></span>Java</button>
           <button class="tech" type="button" aria-pressed="false" data-cat="other" data-layer="framework" data-projects="" data-roles="Suriya Informatics Solutions" data-related="Java|REST APIs"><span class="tech__dot" aria-hidden="true"></span>Spring MVC</button>

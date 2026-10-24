@@ -610,6 +610,10 @@ details.awards > summary:hover { color: var(--ink); }
   .project[data-span="third"] { grid-column: span 2; }
   .project[data-span="half"] { grid-column: span 3; }
 
+  /* The four tooling cards are sized for their place in the full grid.
+     On their own they pack better in equal halves. */
+  .project-grid[data-filter="tooling"] .project { grid-column: span 3; }
+
   /* A full-width card earns a second column: story on the left,
      the technical read-out on the right. */
   .project[data-span="wide"] .project__card {

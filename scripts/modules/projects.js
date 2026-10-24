@@ -31,6 +31,8 @@ export function initProjects() {
       card.classList.remove('is-peeking');
       if (on) shown++;
     });
+    // Spans are tuned for the full grid; a filtered subset repacks via CSS
+    grid.dataset.filter = filter;
     if (count) count.textContent = `${shown} project${shown === 1 ? '' : 's'}`;
   });
 
