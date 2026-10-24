@@ -1,0 +1,172 @@
+/* ============================================================
+   Design tokens
+   One source of truth for colour, type, space, motion, depth.
+   Themes and user preferences only ever reassign these.
+   ============================================================ */
+
+:root {
+  /* --- Accent sets -------------------------------------------------
+     "signal" is the default: the crimson rule used on my résumé. */
+  --accent-signal-light: #d60036;
+  --accent-signal-dark:  #ff4d6d;
+  --accent-ultramarine-light: #2b44d6;
+  --accent-ultramarine-dark:  #7c91ff;
+  --accent-evergreen-light: #0a7a55;
+  --accent-evergreen-dark:  #2fd39a;
+  --accent-ember-light: #b2500a;
+  --accent-ember-dark:  #ff9a4d;
+
+  /* --- Type ------------------------------------------------------- */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
+
+  /* Fluid scale — 320px → 1440px viewport */
+  --step--2: clamp(0.69rem, 0.67rem + 0.11vw, 0.75rem);
+  --step--1: clamp(0.8rem, 0.76rem + 0.2vw, 0.9rem);
+  --step-0:  clamp(0.95rem, 0.9rem + 0.25vw, 1.08rem);
+  --step-1:  clamp(1.1rem, 1rem + 0.5vw, 1.4rem);
+  --step-2:  clamp(1.35rem, 1.15rem + 1vw, 2rem);
+  --step-3:  clamp(1.7rem, 1.3rem + 2vw, 2.9rem);
+  --step-4:  clamp(2.1rem, 1.4rem + 3.4vw, 4.2rem);
+  --step-5:  clamp(2.6rem, 1.3rem + 6vw, 6rem);
+
+  --leading-tight: 1.05;
+  --leading-snug: 1.25;
+  --leading-body: 1.62;
+  --tracking-tight: -0.022em;
+  --tracking-label: 0.14em;
+
+  /* --- Space ------------------------------------------------------ */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2.25rem;
+  --space-xl: 3.5rem;
+  --space-2xl: 5rem;
+  --space-3xl: clamp(4.5rem, 10vw, 9rem);
+
+  /* Density is user-adjustable in the playground */
+  --density: 1;
+  --section-pad: calc(var(--space-3xl) * var(--density));
+  --gutter: clamp(1.15rem, 4vw, 3rem);
+  --measure: 64ch;
+  --radius-s: 6px;
+  --radius-m: 12px;
+  --radius-l: 20px;
+  --radius-full: 999px;
+  --rule: 1px;
+
+  /* --- Motion ----------------------------------------------------- */
+  --motion: 1; /* 0 disables transforms/opacity choreography */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --dur-fast: calc(140ms * var(--motion));
+  --dur: calc(300ms * var(--motion));
+  --dur-slow: calc(680ms * var(--motion));
+
+  --maxw: 1240px;
+  --maxw-narrow: 980px;
+}
+
+/* --- Light theme (default) ------------------------------------- */
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #faf9f7;
+  --bg-sunken: #f1efec;
+  --surface: #ffffff;
+  --surface-2: #f6f4f1;
+  --ink: #15130f;
+  --ink-2: #413c35;
+  --ink-3: #6f6a62;
+  --ink-4: #9a948b;
+  --line: #e2ded7;
+  --line-strong: #cec9c0;
+  --accent: var(--accent-signal-light);
+  --accent-ink: #ffffff;
+  --accent-wash: color-mix(in oklab, var(--accent) 9%, transparent);
+  --accent-wash-strong: color-mix(in oklab, var(--accent) 16%, transparent);
+  --shadow-s: 0 1px 2px rgb(21 19 15 / 0.05), 0 1px 1px rgb(21 19 15 / 0.03);
+  --shadow-m: 0 2px 4px rgb(21 19 15 / 0.04), 0 12px 28px -12px rgb(21 19 15 / 0.14);
+  --shadow-l: 0 2px 6px rgb(21 19 15 / 0.05), 0 32px 64px -24px rgb(21 19 15 / 0.22);
+  --scrim: rgb(28 25 21 / 0.42);
+  --grid-line: rgb(21 19 15 / 0.045);
+}
+
+/* --- Dark theme ------------------------------------------------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0c0c0d;
+  --bg-sunken: #09090a;
+  --surface: #141416;
+  --surface-2: #1b1b1e;
+  --ink: #f5f3f0;
+  --ink-2: #cfcac3;
+  --ink-3: #9a948c;
+  --ink-4: #6d6861;
+  --line: #262629;
+  --line-strong: #37373c;
+  --accent: var(--accent-signal-dark);
+  --accent-ink: #19060b;
+  --accent-wash: color-mix(in oklab, var(--accent) 14%, transparent);
+  --accent-wash-strong: color-mix(in oklab, var(--accent) 24%, transparent);
+  --shadow-s: 0 1px 2px rgb(0 0 0 / 0.5);
+  --shadow-m: 0 2px 4px rgb(0 0 0 / 0.4), 0 12px 28px -12px rgb(0 0 0 / 0.7);
+  --shadow-l: 0 2px 6px rgb(0 0 0 / 0.45), 0 32px 64px -24px rgb(0 0 0 / 0.85);
+  --scrim: rgb(5 5 6 / 0.66);
+  --grid-line: rgb(245 243 240 / 0.05);
+}
+
+/* System preference when the visitor has not chosen a theme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0c0c0d;
+    --bg-sunken: #09090a;
+    --surface: #141416;
+    --surface-2: #1b1b1e;
+    --ink: #f5f3f0;
+    --ink-2: #cfcac3;
+    --ink-3: #9a948c;
+    --ink-4: #6d6861;
+    --line: #262629;
+    --line-strong: #37373c;
+    --accent: var(--accent-signal-dark);
+    --accent-ink: #19060b;
+    --accent-wash: color-mix(in oklab, var(--accent) 14%, transparent);
+    --accent-wash-strong: color-mix(in oklab, var(--accent) 24%, transparent);
+    --shadow-s: 0 1px 2px rgb(0 0 0 / 0.5);
+    --shadow-m: 0 2px 4px rgb(0 0 0 / 0.4), 0 12px 28px -12px rgb(0 0 0 / 0.7);
+    --shadow-l: 0 2px 6px rgb(0 0 0 / 0.45), 0 32px 64px -24px rgb(0 0 0 / 0.85);
+    --scrim: rgb(5 5 6 / 0.66);
+    --grid-line: rgb(245 243 240 / 0.05);
+  }
+}
+
+/* --- Accent switching (playground) ------------------------------ */
+:root[data-accent="ultramarine"] { --accent: var(--accent-ultramarine-light); --accent-ink: #fff; }
+:root[data-accent="evergreen"]   { --accent: var(--accent-evergreen-light);   --accent-ink: #fff; }
+:root[data-accent="ember"]       { --accent: var(--accent-ember-light);       --accent-ink: #fff; }
+
+:root[data-theme="dark"][data-accent="ultramarine"] { --accent: var(--accent-ultramarine-dark); --accent-ink: #050720; }
+:root[data-theme="dark"][data-accent="evergreen"]   { --accent: var(--accent-evergreen-dark);   --accent-ink: #022018; }
+:root[data-theme="dark"][data-accent="ember"]       { --accent: var(--accent-ember-dark);       --accent-ink: #231003; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"])[data-accent="ultramarine"] { --accent: var(--accent-ultramarine-dark); --accent-ink: #050720; }
+  :root:not([data-theme="light"])[data-accent="evergreen"]   { --accent: var(--accent-evergreen-dark);   --accent-ink: #022018; }
+  :root:not([data-theme="light"])[data-accent="ember"]       { --accent: var(--accent-ember-dark);       --accent-ink: #231003; }
+}
+
+/* --- Density & motion presets (playground) ---------------------- */
+:root[data-density="compact"] { --density: 0.62; --measure: 60ch; }
+:root[data-motion="calm"]  { --motion: 0.6; }
+:root[data-motion="still"] { --motion: 0.0001; }
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --motion: 0.0001; }
+}

@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Local editor / tooling config
+.claude/
+
+# Dependency dirs (none are used, but keep the repo clean if that changes)
+node_modules/

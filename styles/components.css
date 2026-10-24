@@ -1,0 +1,331 @@
+/* ============================================================
+   Components — buttons, chips, cards, dialog, cursor, progress
+   ============================================================ */
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  --btn-bg: transparent;
+  --btn-ink: var(--ink);
+  --btn-line: var(--line-strong);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs);
+  min-block-size: 46px;
+  padding: 0.7rem 1.15rem;
+  border: var(--rule) solid var(--btn-line);
+  border-radius: var(--radius-full);
+  background: var(--btn-bg);
+  color: var(--btn-ink);
+  font-size: var(--step--1);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  cursor: pointer;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    border-color var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out),
+    background-color var(--dur) var(--ease-out);
+}
+
+/* The wipe reads as "this is going to happen", not decoration */
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--accent);
+  transform: scaleX(calc(var(--btn-fill, 0)));
+  transform-origin: left center;
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0) scale(0.985); }
+
+.btn--primary {
+  --btn-bg: var(--ink);
+  --btn-ink: var(--bg);
+  --btn-line: var(--ink);
+  font-weight: 560;
+}
+
+.btn--primary:hover { --btn-fill: 1; --btn-ink: var(--accent-ink); --btn-line: var(--accent); }
+
+.btn--ghost:hover { --btn-line: var(--accent); --btn-ink: var(--accent); }
+
+.btn--subtle {
+  --btn-line: transparent;
+  --btn-bg: var(--surface-2);
+  min-block-size: 42px;
+  padding-inline: 0.95rem;
+}
+.btn--subtle:hover { --btn-line: var(--line-strong); }
+
+.btn__icon { inline-size: 1em; block-size: 1em; flex: none; transition: transform var(--dur) var(--ease-out); }
+.btn:hover .btn__icon--arrow { transform: translateX(3px); }
+.btn:hover .btn__icon--down { transform: translateY(2px); }
+
+/* Magnetic pull is applied by JS on fine pointers only */
+.magnetic { will-change: transform; }
+
+/* ---------- Chips ---------- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.3rem 0.65rem;
+  border: var(--rule) solid var(--line);
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a.chip:hover, button.chip:hover { border-color: var(--line-strong); color: var(--ink); }
+button.chip { cursor: pointer; }
+
+.chip--accent { border-color: color-mix(in oklab, var(--accent) 40%, var(--line)); color: var(--accent); background: var(--accent-wash); }
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+}
+
+/* Technologies stagger in when their panel opens */
+.chip-row--stagger .chip {
+  opacity: calc(1 - var(--motion));
+  transform: translateY(calc(7px * var(--motion)));
+  transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 34ms * var(--motion));
+}
+
+.is-active .chip-row--stagger .chip,
+[open] .chip-row--stagger .chip,
+.is-revealed .chip-row--stagger .chip { opacity: 1; transform: none; }
+
+/* ---------- Cards ---------- */
+
+.card {
+  position: relative;
+  background: var(--surface);
+  border: var(--rule) solid var(--line);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+}
+
+/* ---------- Tags / pill toggles (used by filters + playground) ---------- */
+
+.toggle-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-inline-size: 100%;
+  padding: 3px;
+  gap: 2px;
+  background: var(--surface-2);
+  border: var(--rule) solid var(--line);
+  border-radius: var(--radius-full);
+}
+
+@media (max-width: 380px) {
+  /* At 320px three pills will not sit on one line; let them stack
+     inside the group rather than push the page sideways. */
+  .toggle-group { border-radius: var(--radius-l); }
+  .toggle-group__btn { flex: 1 1 auto; padding-inline: 0.7rem; }
+}
+
+.toggle-group__btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ink-3);
+  padding: 0.45rem 0.85rem;
+  min-block-size: 38px;
+  border-radius: var(--radius-full);
+  font-size: var(--step--1);
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+}
+
+.toggle-group__btn:hover { color: var(--ink); }
+
+.toggle-group__btn[aria-pressed="true"],
+.toggle-group__btn[aria-selected="true"] {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-s);
+}
+
+/* ---------- Scroll progress ---------- */
+
+.progress {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  block-size: 2px;
+  z-index: 120;
+  background: transparent;
+  pointer-events: none;
+}
+
+.progress__bar {
+  block-size: 100%;
+  inline-size: 100%;
+  background: var(--accent);
+  transform: scaleX(var(--p, 0));
+  transform-origin: left center;
+}
+
+/* ---------- Custom cursor (fine pointers only) ---------- */
+
+.cursor,
+.cursor-ring {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  z-index: 300;
+  pointer-events: none;
+  border-radius: 50%;
+  opacity: 0;
+  mix-blend-mode: difference;
+}
+
+.cursor {
+  inline-size: 6px;
+  block-size: 6px;
+  background: #fff;
+  translate: -50% -50%;
+}
+
+.cursor-ring {
+  inline-size: 34px;
+  block-size: 34px;
+  border: 1px solid rgb(255 255 255 / 0.65);
+  translate: -50% -50%;
+  transition: width 260ms var(--ease-out), height 260ms var(--ease-out),
+              border-color 260ms var(--ease-out), opacity 200ms linear;
+}
+
+.has-cursor .cursor,
+.has-cursor .cursor-ring { opacity: 1; }
+
+.has-cursor.cursor-hot .cursor-ring { inline-size: 58px; block-size: 58px; border-color: rgb(255 255 255 / 0.9); }
+.has-cursor.cursor-hot-lg .cursor-ring { inline-size: 84px; block-size: 84px; }
+.has-cursor.cursor-down .cursor-ring { inline-size: 26px; block-size: 26px; }
+
+@media (hover: none), (pointer: coarse) {
+  .cursor, .cursor-ring { display: none; }
+}
+
+/* ---------- Dialog / case study ---------- */
+
+dialog.modal {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  max-inline-size: min(980px, 100vw);
+  inline-size: 100%;
+  max-block-size: 100dvh;
+  margin: auto;
+  overflow: visible;
+}
+
+dialog.modal::backdrop {
+  background: var(--scrim);
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease-out);
+  backdrop-filter: blur(3px);
+}
+
+dialog.modal[open]::backdrop { opacity: 1; }
+
+.modal__panel {
+  position: relative;
+  background: var(--bg);
+  border: var(--rule) solid var(--line);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-l);
+  max-block-size: min(88dvh, 940px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  opacity: calc(1 - var(--motion));
+  transform: translateY(calc(16px * var(--motion))) scale(calc(1 - 0.015 * var(--motion)));
+  transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+}
+
+dialog.modal[open] .modal__panel { opacity: 1; transform: none; }
+
+.modal__close {
+  position: sticky;
+  inset-block-start: var(--space-s);
+  float: inline-end;
+  margin-inline-end: var(--space-s);
+  margin-block-start: var(--space-s);
+  z-index: 3;
+  inline-size: 44px;
+  block-size: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: var(--rule) solid var(--line);
+  background: var(--surface);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+
+.modal__close:hover { color: var(--accent); border-color: var(--accent); transform: rotate(90deg); }
+
+@media (max-width: 640px) {
+  dialog.modal { max-inline-size: 100%; }
+  .modal__panel { border-radius: var(--radius-m) var(--radius-m) 0 0; max-block-size: 92dvh; }
+}
+
+/* ---------- Toast ---------- */
+
+.toast {
+  position: fixed;
+  inset-block-end: calc(var(--space-m) + env(safe-area-inset-bottom));
+  inset-inline: 0;
+  margin-inline: auto;
+  z-index: 250;
+  inline-size: max-content;
+  max-inline-size: calc(100% - 2rem);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: 0.6rem 1rem;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: var(--radius-full);
+  font-size: var(--step--1);
+  box-shadow: var(--shadow-l);
+  opacity: 0;
+  transform: translateY(calc(12px * var(--motion))) scale(calc(1 - 0.04 * var(--motion)));
+  pointer-events: none;
+  transition: opacity 220ms var(--ease-out), transform 320ms var(--ease-spring);
+}
+
+.toast.is-visible { opacity: 1; transform: none; }
+
+.toast__check { inline-size: 1.05em; block-size: 1.05em; }
+.toast__check path {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 22;
+  transition: stroke-dashoffset 420ms var(--ease-out) 90ms;
+}
+.toast.is-visible .toast__check path { stroke-dashoffset: 0; }

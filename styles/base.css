@@ -1,0 +1,212 @@
+/* ============================================================
+   Base — reset, document, typography primitives, layout helpers
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+* { margin: 0; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  /* Fixed header + a little breathing room for anchor landings */
+  scroll-padding-top: clamp(84px, 12vh, 118px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: var(--leading-body);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+  transition: background-color var(--dur) var(--ease-out), color var(--dur) var(--ease-out);
+}
+
+/* The theme swap should read as one considered move, not a flash */
+body, .surface, .card, .chip, .btn, .rule, .panel {
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: var(--dur);
+  transition-timing-function: var(--ease-out);
+}
+
+img, svg, canvas { display: block; max-width: 100%; }
+img { height: auto; }
+
+input, button, select, textarea { font: inherit; color: inherit; }
+
+h1, h2, h3, h4 {
+  font-weight: 560;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  text-wrap: balance;
+}
+
+p { text-wrap: pretty; }
+
+a { color: inherit; text-decoration-color: color-mix(in oklab, currentColor 35%, transparent); text-underline-offset: 0.22em; }
+a:hover { text-decoration-color: currentColor; }
+
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-s);
+}
+
+/* ---------- Layout primitives ---------- */
+
+.shell {
+  width: min(100% - (var(--gutter) * 2), var(--maxw));
+  margin-inline: auto;
+}
+
+.shell--narrow { width: min(100% - (var(--gutter) * 2), var(--maxw-narrow)); }
+
+.section {
+  position: relative;
+  padding-block: var(--section-pad);
+  scroll-margin-top: 0;
+}
+
+.section + .section { border-top: var(--rule) solid var(--line); }
+
+/* ---------- Section headers ---------- */
+
+.section-head {
+  display: grid;
+  gap: var(--space-s);
+  margin-bottom: calc(var(--space-xl) * var(--density));
+  max-width: 62ch;
+}
+
+.section-index {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.section-index::before {
+  content: "";
+  inline-size: 2rem;
+  block-size: var(--rule);
+  background: var(--accent);
+}
+
+.section-title {
+  font-size: var(--step-3);
+  letter-spacing: -0.03em;
+}
+
+.section-title em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.section-lede {
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--ink-2);
+  max-width: 48ch;
+  font-weight: 380;
+}
+
+/* ---------- Text helpers ---------- */
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.mono { font-family: var(--font-mono); font-size: var(--step--1); }
+.muted { color: var(--ink-3); }
+.prose { max-width: var(--measure); color: var(--ink-2); }
+.prose + .prose { margin-top: var(--space-s); }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  inset-block-start: var(--space-s);
+  inset-inline-start: var(--space-s);
+  z-index: 200;
+  padding: var(--space-2xs) var(--space-s);
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: var(--radius-s);
+  transform: translateY(-200%);
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.skip-link:focus-visible { transform: translateY(0); }
+
+/* Grid and flex children default to min-width:auto, which lets a horizontal
+   scroller inside them widen the whole page. Opt every layout child out. */
+.hero__grid > *,
+.about__layout > *,
+.skills__layout > *,
+.case__body > *,
+.contact__inner > *,
+.project-grid > *,
+.process__steps > * { min-inline-size: 0; }
+
+/* ---------- Hairline grid backdrop (used sparingly) ---------- */
+
+.grid-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--grid-line) var(--rule), transparent var(--rule));
+  background-size: calc(100% / 6) 100%;
+  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  z-index: 0;
+}
+
+/* Six hairlines across a phone is noise, not structure */
+@media (max-width: 720px) { .grid-backdrop { display: none; } }
+
+/* ---------- Scroll reveal ---------- */
+
+[data-reveal] {
+  opacity: calc(1 - var(--motion));
+  transform: translate3d(0, calc(18px * var(--motion)), 0);
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Never hide content from people who cannot run the observer */
+.no-js [data-reveal] { opacity: 1; transform: none; }
